@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: linux_update
   author: hoplacloud
   description: Hopla.cloud role for ansible to update linux server
   company: hopla.cloud
