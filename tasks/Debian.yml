@@ -1,12 +1,5 @@
 ---
 # tasks file for hoplacloud.linux_update
-
-- name: Upgrade all packages to the latest version
-  apt:
-    name: "*"
-    state: latest
-    update_cache: yes
-
 - name: Update all packages to the latest version
   apt:
     upgrade: dist
@@ -26,5 +19,7 @@
   register: reboot_required_file
 
 - name: notify reboot is required
+  debug:
+    msg: "REBOOT REQUIRED"
   when: reboot_required_file.stat.exists
   notify: reboot
