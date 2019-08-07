@@ -1,2 +1,5 @@
 ---
 # handlers file for hoplacloud.linux_update
+handlers:
+   - name: reboot
+     reboot:
