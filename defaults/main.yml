@@ -1,2 +1,3 @@
 ---
 # defaults file for hoplacloud.linux_update
+allow_reboot: False

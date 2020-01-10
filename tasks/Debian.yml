@@ -32,4 +32,4 @@
 
 - name: reboot
   reboot:
-  when: reboot_required.changed
+  when: reboot_required.changed and allow_reboot
