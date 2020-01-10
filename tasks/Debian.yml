@@ -3,11 +3,17 @@
 - name: Update all packages to the latest version
   apt:
     upgrade: dist
+    update_cache: yes
 
 - name: Remove unattended-upgrades package
   apt:
     name: unattended-upgrades
     state: absent
+
+- name: Disable lxcfs
+  systemd:
+    name: lxcfs
+    enabled: no
 
 - name: Remove dependencies that are no longer required
   apt:
@@ -23,4 +29,7 @@
   failed_when: False
   register: reboot_required
   changed_when: reboot_required.rc == 0
-  notify: reboot
+
+- name: reboot
+  reboot:
+  when: reboot_required.changed
