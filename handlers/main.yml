@@ -3,6 +3,7 @@
 
 - name: reboot_normal
   include: ../Debian_normal_reboot.yml
+  ignore_errors: yes
 
 - name: reboot_localhost
   include: Debian_localhost_reboot.yml
