@@ -32,10 +32,10 @@
 
 - name: Reboot if required
   reboot:
-  when: reboot_required.changed and ansible_play_hosts != 'localhost'
+  when: reboot_required.changed and inventory_hostname != "localhost"
 
 - name: Notify reboot if ansible connection is local
   debug: msg="Need normal reboot"
   notify:
   - reboot_localhost
-  when: reboot_required.changed and ansible_play_hosts == 'localhost'
+  when: reboot_required.changed and inventory_hostname == "localhost"
