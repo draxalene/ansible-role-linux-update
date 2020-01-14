@@ -2,3 +2,4 @@
 # handlers file for hoplacloud.linux_update
 - name: reboot_localhost
   command: systemctl reboot
+  when: reboot_required.changed and inventory_hostname == "localhost"
