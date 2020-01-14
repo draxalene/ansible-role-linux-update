@@ -36,6 +36,5 @@
 
 - name: Notify reboot if ansible connection is local
   debug: msg="Need handler reboot"
-  notify:
-  - reboot_localhost
+  notify: reboot_localhost
   when: reboot_required.changed and inventory_hostname == "localhost"

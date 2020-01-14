@@ -1,4 +1,4 @@
 ---
 # handlers file for hoplacloud.linux_update
-- name: reboot
+- name: reboot_localhost
   command: systemctl reboot
