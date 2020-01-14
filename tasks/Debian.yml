@@ -32,4 +32,9 @@
 
 - name: reboot
   reboot:
-  when: reboot_required.changed and allow_reboot
+  when: reboot_required.changed and ansible_play_hosts != 'localhost'
+
+- name: Notify reboot if ansible connection is local
+  notify:
+    - reboot
+  when: reboot_required.changed and ansible_play_hosts == 'localhost'
