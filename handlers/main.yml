@@ -1,9 +1,4 @@
 ---
 # handlers file for hoplacloud.linux_update
-
-- name: reboot_normal
-  include: ../Debian_normal_reboot.yml
-  ignore_errors: yes
-
-- name: reboot_localhost
-  include: Debian_localhost_reboot.yml
+- name: reboot
+  command: systemctl reboot
