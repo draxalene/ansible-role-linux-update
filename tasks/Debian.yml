@@ -31,11 +31,11 @@
   changed_when: reboot_required.rc == 0
 
 - name: Notify reboot if ansible connection is local
-  notify:
-  - reboot_normal
+  debug: msg="Need localhost reboot"
+  notify: reboot_normal
   when: reboot_required.changed and ansible_play_hosts != 'localhost'
 
 - name: Notify reboot if ansible connection is local
-  notify:
-  - reboot_localhost
+  debug: msg="Need normal reboot"
+  notify: reboot_localhost
   when: reboot_required.changed and ansible_play_hosts == 'localhost'
