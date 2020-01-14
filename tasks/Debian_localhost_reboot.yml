@@ -1,0 +1,4 @@
+---
+- name: Notify reboot if ansible connection is local
+  notify:
+    - reboot
