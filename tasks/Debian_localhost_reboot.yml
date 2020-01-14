@@ -1,4 +1,3 @@
 ---
-- name: Notify reboot if ansible connection is local
-  notify:
-    - reboot
+- name: reboot
+  command: systemctl reboot

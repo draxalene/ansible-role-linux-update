@@ -30,10 +30,12 @@
   register: reboot_required
   changed_when: reboot_required.rc == 0
 
-- name: Include normal reboot
-  include: Debian_normal_reboot.yml
+- name: Notify reboot if ansible connection is local
+  notify:
+  - reboot_normal
   when: reboot_required.changed and ansible_play_hosts != 'localhost'
 
-- name: Include reboot if ansible connection is local
-  include: Debian_localhost_reboot.yml
+- name: Notify reboot if ansible connection is local
+  notify:
+  - reboot_localhost
   when: reboot_required.changed and ansible_play_hosts == 'localhost'

@@ -1,4 +1,8 @@
 ---
 # handlers file for hoplacloud.linux_update
-- name: reboot
-  command: systemctl reboot
+
+- name: reboot_normal
+  include: Debian_normal_reboot.yml
+
+- name: reboot_localhost
+  include: Debian_localhost_reboot.yml
