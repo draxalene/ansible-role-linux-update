@@ -29,8 +29,8 @@
   failed_when: False
   register: reboot_required
   changed_when: reboot_required.rc == 0
-  when: allow_reboot == True
   notify: reboot_localhost
+  when: allow_reboot|bool == True
 
 - name: Reboot if required
   reboot:
