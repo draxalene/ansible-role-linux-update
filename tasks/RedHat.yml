@@ -1,2 +1,19 @@
 ---
 # tasks file for hoplacloud.linux_update
+
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: check if reboot is required
+  shell: "needs-restarting -r"
+  failed_when: false
+  register: reboot_required
+  changed_when: reboot_required.rc == 1
+  notify: reboot_localhost
+  when: allow_reboot|bool == True
+
+- name: Reboot if required
+  reboot:
+  when: reboot_required.changed and inventory_hostname != "localhost"
