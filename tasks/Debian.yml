@@ -10,11 +10,6 @@
     name: unattended-upgrades
     state: absent
 
-- name: Disable lxcfs
-  systemd:
-    name: lxcfs
-    enabled: no
-
 - name: Remove dependencies that are no longer required
   apt:
     autoremove: yes
