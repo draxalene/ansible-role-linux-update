@@ -1,7 +1,8 @@
 Role Name
 =========
+draxalene.linux_update
 
-Hopla.cloud role for ansible to update linux server.
+Draxalene role for ansible to update linux server. (by hopla.cloud)
 
 Requirements
 ------------
@@ -24,7 +25,7 @@ Example Playbook
     - hosts: localhost
       remote_user: root
       roles:
-         - hoplacloud.linux_update
+         - draxalene.linux_update
 
 License
 -------
@@ -34,4 +35,4 @@ GPLv3
 Author Information
 ------------------
 
-Joffrey Skandera for [hopla.cloud](https://hopla.cloud)
+Alexandre MOREAU by hopla.cloud
