@@ -1,7 +1,7 @@
 galaxy_info:
   role_name: linux_update
-  author: hoplacloud
-  description: Hopla.cloud role for ansible to update linux server
+  author: draxalene
+  description: draxalene role for ansible to update linux server (by hopla.cloud)
   company: hopla.cloud
 
   license: GPLv3
@@ -13,6 +13,7 @@ galaxy_info:
       versions:
         - bionic
         - xenial
+        - jammy
     - name: EL
       versions:
         - 7
@@ -20,6 +21,7 @@ galaxy_info:
   galaxy_tags:
     - linux
     - update
+    - draxalene
     - hoplacloud
 
 dependencies: []
